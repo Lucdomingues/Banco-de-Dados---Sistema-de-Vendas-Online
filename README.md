@@ -1,6 +1,19 @@
 ### DOCUMENTAÇÃO
 # **Sistemas de Vendas Online**
 ---------------
+# Sumário
+
+  - [Glossário de siglas](#glossário-de-siglas)
+  - [Objetivo](#objetivo)
+  - [Regras de Negócio e Análise de requisitos](#regras-de-negócio-e-análise-de-requisitos)
+  - [Usuários](#usuários)
+  - [Produtos](#produtos)
+  - [Categorias](#categorias)
+  - [Pedidos](#pedidos)
+  - [Pagamentos](#pagamentos)
+  - [Modelo Conceitual](#modelo-conceitual)
+  - [Modelo Lógico](#modelo-lógico)
+
 ### **Glossário de siglas**
 - **DDL:** Linguagem de Definição de Dados;
 - **DML:** Linguagem de Manipulação de Dados;
@@ -38,7 +51,7 @@ Será construído um **DB** para um **Sistema de Vendas Online**
 - Um pagamento tem forma (boleto, cartao, pix) e status (pendente, aprovado, recusado).
 
 ## **Modelo Conceitual**
-PNG do modelo
+![Modelo Conceitual](/DER_Sistema_de_vendas.drawio%20(1).png)
 
 ## **Modelo Lógico**
 > **Observação:** O banco de dados foi criado, mesmo estando vazio, apenas para estruturarmos o modelo.
@@ -46,7 +59,7 @@ PNG do modelo
 > É excelente para onboarding, possui boa escalabilidade e atende bem a sistemas de médio e grande porte.
 > **Outra opção para SGBD seria PostgreSQL**
 
-IMg do modelo lógico
+![Modelo Lógico](modelo_logico_SVO.png)
 
 Na criação do modelo lógico foi descoberto algumas questões que antes não tinham sido consideradas no modelo conceitual:
 - Usúarios 1:N Endereços (usuarios possuem n endereços, endereços possuem apenas 1 usuário), o que pode não ser 
