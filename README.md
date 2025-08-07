@@ -65,3 +65,13 @@ Na criação do modelo lógico foi descoberto algumas questões que antes não t
 - Usúarios 1:N Endereços (usuarios possuem n endereços, endereços possuem apenas 1 usuário), o que pode não ser 
  interessante, pois a mesma regra serve para ambos, portanto, ajustamos a tabela no modelo lógico, tendo uma relação de N:M,
  foi implementada uma tabela associativa `Usuario_Endereco`;
+
+## **Modelo Físico**
+Na criação do Banco de dados houveram algumas mudanças:
+- **Coluna** `status_pedido` da tabela `pedidos`, o tipo do dado era varchar(), porém foi substituído para `enum("pendente", "pago", "cancelado", "enviado", "entregue")`,
+  garantindo a integridade do dado;
+- **Coluna** `forma_pagamento` da tabela `pagamento`, o tipo do dado era varchar(), porém foi substituído para `enum("boleto", "cartao", "pix")`,
+  garantindo a integridade do dado;
+- **Coluna** `status_pagamento` da tabela `pagamento`, o tipo do dado era varchar(), porém foi substituído para `enum("pendente", "aprovado", "recusado")`,
+  garantindo a integridade do dado;
+
