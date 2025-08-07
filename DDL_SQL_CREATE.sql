@@ -55,7 +55,7 @@ id int primary key not null auto_increment,
 usuario_id int not null,
 data_criacao timestamp not null default current_timestamp,
 status_pedido enum("pendente", "pago", "cancelado", "enviado", "entregue") not null default 'pendente',
-constraint fk_pedidos foreign key (usuario_id) references usuario(id)
+constraint fk_pedidos foreign key (usuario_id) references usuarios(id)
 );
 
 create table itens_pedidos(
@@ -63,7 +63,7 @@ id int primary key not null auto_increment,
 produto_id int not null,
 pedido_id int not null,
 constraint fk_itens_pedidos_1 foreign key (produto_id) references produtos(id),
-constraint fk_itens_pedidos_2 foreign key (pedidos_id) references pedidos(id)
+constraint fk_itens_pedidos_2 foreign key (pedido_id) references pedidos(id)
 );
 
 create table pagamento(
