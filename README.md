@@ -74,4 +74,10 @@ Na criação do Banco de dados houveram algumas mudanças:
   garantindo a integridade do dado;
 - **Coluna** `status_pagamento` da tabela `pagamento`, o tipo do dado era varchar(), porém foi substituído para `enum("pendente", "aprovado", "recusado")`,
   garantindo a integridade do dado;
+- **Tabela** `itens_pedidos` recebeu 2 novas colunas necessárias para consultas frequentes, as colunas são `quantidade` e `preco_unitario` para ter um registro do preço no
+  momento da compra
+  `alter table itens_pedidos add column (
+quantidade int not null default 1,
+preco_unitario decimal(10, 2) not null
+);`;
 
