@@ -81,3 +81,51 @@ quantidade int not null default 1,
 preco_unitario decimal(10, 2) not null
 );`;
 
+## **DDL - Para a definição do DB e Tabelas**
+Query para a criação e definição do DB - `sistema_vendas`, e a prática do modelo físico, tivemos apenas pequenos ajustes em questão de regras, como citado logo a cima.
+
+[Veja as Querys](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/DDL_SQL_CREATE.sql)
+
+## **DML - Para a manipulação de toda a informação, povoamento das tabelas**
+As querys aqui apresentadas são para o povoamento das tabelas, os dados são fictícios!
+> **Observação:** Na tabela `itens_pedidos` foi adicionado duas novas colunas, que são de suma importância para um sistema de vendas, elas são, `quantidade` e `preco_unitario`
+> permitindo assim o registro do valor daquele pedido no momento em que foi comprado.
+> A seguinte alteração foi adicionada pelo comando:
+> `alter table itens_pedidos add column (
+quantidade int not null default 1,
+preco_unitario decimal(10, 2) not null
+);`
+
+[Veja as Querys](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/DML_SQL_INSERT.sql)
+
+## **DQL - Para consultas básicas**
+Algumas querys básicas, contendo `select`, `where`, `order by`, `limit`, `like`;
+
+O que é consultado:
+- Listar produto com respectivo: id, nome, preço, estoque
+- Listar pedido com status 'pago'
+- Listar produto com estoque menor que 10
+- Listar produto do mais caro para o mais barato
+- Listar usuário com cadastro mais recente
+- Listar 3 usuários com cadastro mais recente
+- Listar 3 produtos mais baratos
+- Listar e-mail terminando em @gmail.com
+- Listar produto com preço entre 50 e 1000
+
+[Veja as Querys](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/DQL_SQL_SELECT.sql)
+
+## **DQL - Para consultas intermediárias**
+Algumas querys intermediárias, contendo `join`, `group by`, `order by`, `limit`;
+
+O que é consultado:
+- Listar pedido com cliente, data e status
+- Listar item de cada pedido
+- Listar total por pedido
+- Listar quantidade de pedido por status
+- Listar faturamento total por cliente
+- Listar produto mais vendido
+- Listar média de preço de produto
+- Listar produto mais caro
+- Listar pedido mais caro
+
+[Veja as Querys](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/DQL_Funcoes_avancadas.sql)
