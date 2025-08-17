@@ -129,3 +129,15 @@ O que é consultado:
 - Listar pedido mais caro
 
 [Veja as Querys](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/DQL_Funcoes_avancadas.sql)
+
+## **DQL - Consultas com JOINs e Subqueries**
+Algumas querys intermediárias, contendo `inner join`, `left join`, `right join` e subquery;
+
+O que é consultado:
+- Listar clientes e os produtos que compraram (INNER JOIN)
+- Listar todos os clientes e, se houver, os produtos comprados (LEFT JOIN)
+- Listar todos os produtos e, se houver, os clientes que compraram (RIGHT JOIN)
+- Listar o cliente que comprou o produto mais caro (Subquery com `MAX()`)
+
+[Veja as Querys](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/DQL_SQL_Funcoes_avancadas_2.sql)
+
