@@ -141,3 +141,52 @@ O que é consultado:
 
 [Veja as Querys](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/DQL_SQL_Funcoes_avancadas_2.sql)
 
+## **Objetos do Banco de Dados**
+Algumas `Views`, `Stored Procedures`, `Functions` e `Triggers`
+
+### **View**
+- `view_clientes_pedidos`: exibe todos os pedidos de cada cliente
+
+Exemplo:
+#### Chamando a view
+ `select * from view_clientes_pedidos;`
+#### Retorno
+![Retorno da função view](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/retorno-view.png)
+
+[Veja a definição desses objetos]
+
+### **Stored Procedures**
+- `sp_pedidos_por_cliente`: recebe o ID do cliente e retorna todos os pedidos desse cliente com detalhes do pedido e valor total.
+- `sp_faturamento_total`: calcula e retorna o faturamento total de todos os pedidos.
+
+Exemplo:
+#### Chamando a Procedure 1
+ `call sp_pedidos_por_cliente(1);`
+#### Retorno
+![Retorno da procedure](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/retorno_procedure_1.png)
+
+Exemplo:
+#### Chamando a Procedure 2
+ `call sp_faturamento_total();`
+#### Retorno
+![Retorno da procedure](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/retorno_procedure_2.png)
+
+[Veja a definição desses objetos]
+
+### **Functions**
+- `fn_valor_total_pedido`: recebe o ID de um pedido e retorna o valor total
+- `fn_qtd_pedidos_cliente`: recebe o ID de um cliente e retorna a quantidade total de pedidos desse cliente.
+
+Exemplo:
+#### Chamando a function 1
+ `select fn_valor_total_pedido(1) as 'Valor do Pedido';`
+#### Retorno
+![Retorno da função1](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/retorno-function-1.png)
+
+Exemplo:
+#### Chamando a function 2
+ `select fn_qtd_pedidos_cliente(2) as 'Qtd Pedidos';`
+#### Retorno
+![Retorno da função2](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/retorno-function-2.png)
+
+[Veja a definição desses objetos]
