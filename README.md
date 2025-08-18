@@ -3,16 +3,28 @@
 ---------------
 # Sumário
 
-  - [Glossário de siglas](#glossário-de-siglas)
-  - [Objetivo](#objetivo)
-  - [Regras de Negócio e Análise de requisitos](#regras-de-negócio-e-análise-de-requisitos)
-  - [Usuários](#usuários)
-  - [Produtos](#produtos)
-  - [Categorias](#categorias)
-  - [Pedidos](#pedidos)
-  - [Pagamentos](#pagamentos)
-  - [Modelo Conceitual](#modelo-conceitual)
-  - [Modelo Lógico](#modelo-lógico)
+ - [Glossário de Siglas](#glossário-de-siglas)
+- [Objetivo](#objetivo)
+- [Regras de Negócio e Análise de Requisitos](#regras-de-negócio-e-análise-de-requisitos)
+- [Usuários](#usuários)
+- [Produtos](#produtos)
+- [Categorias](#categorias)
+- [Pedidos](#pedidos)
+- [Pagamentos](#pagamentos)
+- [Modelo Conceitual](#modelo-conceitual)
+- [Modelo Lógico](#modelo-lógico)
+- [Modelo Físico](#modelo-físico)
+- [DDL - Definição do Banco e Tabelas](#ddl---definição-do-banco-e-tabelas)
+- [DML - Povoamento das Tabelas](#dml---povoamento-das-tabelas)
+- [DQL - Consultas Básicas](#dql---consultas-básicas)
+- [DQL - Consultas Intermediárias](#dql---consultas-intermediárias)
+- [DQL - Consultas com JOINs e Subqueries](#dql---consultas-com-joins-e-subqueries)
+- [Automação do Banco de Dados](#automação-do-banco-de-dados)
+  - [View](#view)
+  - [Stored Procedures](#stored-procedures)
+  - [Functions](#functions)
+  - [Trigger](#trigger)
+- [Performance do Banco de Dados](#performance-do-banco-de-dados)
 
 ### **Glossário de siglas**
 - **DDL:** Linguagem de Definição de Dados;
@@ -22,7 +34,7 @@
 - **DB:** Banco de Dados;
 - **SGBD:** Sistema Gerenciador de Banco de Dados;
 ### **Objetivo**
-Este projeto tem como finalidade a criação de uma arquitetura de um Banco de Dados Relacional, assim como, a construção e uso das quatro categorias de comandos SQL **(DDl, DML, DCL e TCL)**.
+Este projeto tem como finalidade a criação de uma arquitetura de um Banco de Dados Relacional, assim como, a construção e uso de comandos SQL **(DDl, DML)**.
 
 ### **Regras de Negócio e Análise de requisitos**
 
@@ -208,4 +220,21 @@ where id = 2;`
 ![Trigger Cancelamentos](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/trigger-cancelamentos.png)
 
 ## Performance do Banco de Dados
+
+Foi criado o índice para `produtos.nome`:
+Também temos índice para `produtos.email`, quando criamos a tabela, criamos a coluna email com `UNIQUE`, já formando um índice;
+
+> **Observação**: como o volume de dados é relativamente baixo, não é tão visível a melhoria nas consultas,
+> porém conseguimos ver a diferença usando `EXPLAIN`, antes passava pelas 6 linhas da tabela produtos
+> agora passa pela unica linha referente ao produto consultado.
+
+[Veja aqui as definições e consultas de performance](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/performance-db.sql)
+
+- Antes sem índice:
+
+  ![Sem Indice](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/no-indice.png)
+
+- Depois com índice:
+
+  ![Com Indice](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/indice-true.png)
 
