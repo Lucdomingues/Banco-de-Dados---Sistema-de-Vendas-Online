@@ -141,8 +141,10 @@ O que é consultado:
 
 [Veja as Querys](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/DQL_SQL_Funcoes_avancadas_2.sql)
 
-## **Objetos do Banco de Dados**
+## **Automação do Banco de Dados**
 Algumas `Views`, `Stored Procedures`, `Functions` e `Triggers`
+
+[Veja a definição dessas funções](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/funcoes_otimizacao_db.sql)
 
 ### **View**
 - `view_clientes_pedidos`: exibe todos os pedidos de cada cliente
@@ -152,8 +154,6 @@ Exemplo:
  `select * from view_clientes_pedidos;`
 #### Retorno
 ![Retorno da função view](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/retorno-view.png)
-
-[Veja a definição desses objetos]
 
 ### **Stored Procedures**
 - `sp_pedidos_por_cliente`: recebe o ID do cliente e retorna todos os pedidos desse cliente com detalhes do pedido e valor total.
@@ -171,7 +171,6 @@ Exemplo:
 #### Retorno
 ![Retorno da procedure](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/retorno_procedure_2.png)
 
-[Veja a definição desses objetos]
 
 ### **Functions**
 - `fn_valor_total_pedido`: recebe o ID de um pedido e retorna o valor total
@@ -189,4 +188,24 @@ Exemplo:
 #### Retorno
 ![Retorno da função2](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/retorno-function-2.png)
 
-[Veja a definição desses objetos]
+
+### **Trigger**
+Importante para a **automação e independência** de nosso **Banco de dados**!
+- `tr_update_estoque`: ao inserir um item na tabela `itens_pedidos`, diminui a quantidade correspondente no estoque do produto.
+- `tr_log_pedidos_cancelados`: em um tabela de auditoria(tabela de log) para pedidos cancelados, ao cancelar um pedido essa
+  informação será armazenada pela trigger na tabela `log_cancelamentos` automaticamente.
+
+
+Exemplo da inserção da **Trigger** `tr_log_pedidos_cancelados`:
+
+- Comando update:
+`update pedidos
+set status_pedido = 'cancelado'
+where id = 2;`
+
+- Retorno na tabela `log_cancelamentos`:
+
+![Trigger Cancelamentos](https://github.com/Lucdomingues/Banco-de-Dados---Sistema-de-Vendas-Online/blob/main/trigger-cancelamentos.png)
+
+## Performance do Banco de Dados
+
